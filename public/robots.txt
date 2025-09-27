@@ -1,0 +1,4 @@
+# This tells all web crawlers (User-agent: *) that they are
+# allowed to access everything on the site (Disallow:).
+User-agent: *
+Disallow:

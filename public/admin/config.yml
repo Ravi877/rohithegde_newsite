@@ -1,0 +1,34 @@
+# public/admin/config.yml
+
+backend:
+  # Use the GitHub backend for authentication and file storage
+  name: github
+  # The path to your repository on GitHub
+  repo: Ravi877/rohithegde_newsite # IMPORTANT: Make sure this is your username/repo
+  # The branch to save the files to
+  branch: main
+
+# This specifies where the CMS should upload images
+media_folder: "public/images/uploads"
+# This is the public path to the images that will be used in the markdown files
+public_folder: "/images/uploads"
+
+# This defines the "collections" or types of content you can create.
+# In this case, we only have one collection: "Blog".
+collections:
+  - name: "blog" # A unique identifier for the collection
+    label: "Blog" # The name that will appear in the CMS UI
+    folder: "_posts" # The folder where the markdown files for this collection will be saved
+    create: true # Allows users to create new posts
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # The filename template for new posts
+    
+    # These are the fields that will appear in the editor for each blog post.
+    # They correspond to the "frontmatter" at the top of your markdown files.
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
