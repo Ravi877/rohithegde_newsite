@@ -21,7 +21,7 @@ export default function Home({ featuredPosts }) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Side: Text Content */}
             <div className="text-center lg:text-left">
-              <span className="text-bright-blue font-bold uppercase tracking-wider">Crafting Brilliance</span>
+              <span className="text-bright-blue font-bold uppercase tracking-wider">Rohit Hegde</span>
               <h1 className="text-5xl lg:text-7xl font-extrabold text-white my-4">
                 Create. Inspire.
                 <span className="block">Thrive. Now.</span>
@@ -41,7 +41,7 @@ export default function Home({ featuredPosts }) {
               <div className="relative">
                 <div className="absolute -inset-4 bg-accent-red rounded-full opacity-80"></div>
                 <img
-                  src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  src="\public\images\uploads\HomeProfile_image.jpeg"
                   alt="Creative professional"
                   className="relative w-80 h-80 rounded-full object-cover shadow-2xl"
                 />
