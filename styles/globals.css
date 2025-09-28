@@ -1,21 +1,11 @@
 /* styles/globals.css */
-
-/* These three lines are essential for Tailwind CSS to work. They inject Tailwind's base, components, and utilities styles. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* This line imports the 'Inter' and 'Fira Code' fonts from Google Fonts, which we defined in our tailwind.config.js. */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Fira+Code&display=swap');
-
-/* This is where we can define base styles for HTML elements throughout the site. */
+/* Set global styles for the entire site */
 @layer base {
-  /* We apply smooth scrolling for a better user experience when navigating between sections. */
-  html {
-    scroll-behavior: smooth;
-  }
-  /* Here we apply our custom background and text colors to the body, setting the default look and feel for the entire site. */
   body {
-    @apply bg-navy text-slate font-sans;
+    @apply bg-dark-navy text-light-slate; /* Use our custom dark background and light text */
   }
 }
