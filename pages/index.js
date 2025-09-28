@@ -41,7 +41,7 @@ export default function Home({ featuredPosts }) {
               <div className="relative">
                 <div className="absolute -inset-4 bg-accent-red rounded-full opacity-80"></div>
                 <img
-                  src="\public\images\uploads\HomeProfile_image.jpeg"
+                  src="\images\uploads\HomeProfile_image.jpeg"
                   alt="Creative professional"
                   className="relative w-80 h-80 rounded-full object-cover shadow-2xl"
                 />
