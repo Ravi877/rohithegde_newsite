@@ -182,9 +182,6 @@ function BlogCardModern({ post, index }) {
 }
 
 // Social Media Icons Components
-function InstagramIcon() {
-  return (
-   // Replace all the SVG icon functions with this simple version
 function SocialIcon({ type }) {
   const icons = {
     instagram: '📷',
