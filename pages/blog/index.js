@@ -6,39 +6,26 @@ import Link from 'next/link';
 
 // --- Main Blog Page Component ---
 export default function BlogIndex({ allPosts }) {
-  // Available blog categories from the design
+  // Your new list of categories
   const categories = [
     { id: 'all', name: 'All Posts' },
-    { id: 'security', name: 'Security' },
     { id: 'trending', name: 'Trending' },
-    { id: 'policy', name: 'Policy & Legal' },
-    { id: 'speed', name: 'Speed & Reliability' },
-    { id: 'life', name: 'Life at Cloudflare' },
-    { id: 'partners', name: 'Partners' }
-  ];
-
-  // Sub-categories for active filtering from the design
-  const subCategories = [
-    { id: 'tech-ai', name: 'Tech AI News', parent: 'trending' },
-    { id: 'trending', name: 'Trending', parent: 'trending' },
-    { id: 'mobiles', name: 'Mobiles', parent: 'trending' },
-    { id: 'cybersecurity', name: 'Cybersecurity', parent: 'security' },
-    { id: 'cloud', name: 'Cloud Computing', parent: 'speed' }
+    { id: 'health', name: 'Health' },
+    { id: 'personal-finance', name: 'Personal Finance' },
+    { id: 'tech-ai', name: 'Tech & AI' },
+    { id: 'news-updates', name: 'News & updates' },
+    { id: 'travel', name: 'Travel' }
   ];
 
   const [activeCategory, setActiveCategory] = useState('all');
-  const [activeSubCategory, setActiveSubCategory] = useState('');
 
-  // Note: Your current logic filters only by a 'category' frontmatter field.
-  // The posts will only appear if you add `category: 'security'` (or other category id)
-  // to your markdown files. For now, it will only show posts when "All Posts" is selected.
+  // This logic now filters posts based on the `category` field in your markdown files
   const filteredPosts = activeCategory === 'all'
     ? allPosts
     : allPosts.filter(post => post.category === activeCategory);
 
   return (
     <Layout title="Blog | Rohit Hegde" description="Read the latest articles on finance, technology, and creativity.">
-      {/* Background with gradient similar to the image */}
       <div className="min-h-screen bg-gray-900 text-white relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden z-0">
@@ -51,10 +38,8 @@ export default function BlogIndex({ allPosts }) {
 
           {/* Header section inside the page */}
           <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center space-x-4">
-              <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm rounded-lg px-4 py-2 border border-gray-700">
-                <span className="text-white font-medium">Blog Categories</span>
-              </div>
+            <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm rounded-lg px-4 py-2 border border-gray-700">
+              <span className="text-white font-medium">Blog Categories</span>
             </div>
             <div className="hidden md:flex items-center space-x-6 text-sm">
               <Link href="#" className="hover:text-cyan-400 transition-colors">Home</Link>
@@ -83,27 +68,7 @@ export default function BlogIndex({ allPosts }) {
               ))}
             </div>
           </nav>
-          <hr className="border-gray-700 mb-8" />
-
-
-          {/* Sub-category navigation */}
-          <div className="mb-10 flex flex-wrap gap-3">
-            {subCategories
-              .filter(sub => activeCategory === 'all' || sub.parent === activeCategory)
-              .map((subCategory) => (
-                <button
-                  key={subCategory.id}
-                  onClick={() => setActiveSubCategory(subCategory.id)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    activeSubCategory === subCategory.id
-                      ? 'bg-cyan-500 text-white shadow-lg'
-                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                  }`}
-                >
-                  {subCategory.name}
-                </button>
-              ))}
-          </div>
+          <hr className="border-gray-700 mb-12" />
 
           {/* Blog posts grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -112,31 +77,20 @@ export default function BlogIndex({ allPosts }) {
             ))}
           </div>
 
-          {/* Social media links at bottom */}
-          <div className="flex justify-center space-x-4 mt-16 pt-8 border-t border-gray-800">
-            <SocialIcon href="#" icon="📷" /> {/* Instagram */}
-            <SocialIcon href="#" icon="📘" /> {/* Facebook */}
-            <SocialIcon href="#" icon="🐦" /> {/* Twitter/X */}
-            <SocialIcon href="#" icon="📺" /> {/* YouTube */}
-          </div>
         </div>
       </div>
     </Layout>
   );
 }
 
-
 // --- New Blog Card Component (to match the image) ---
 function BlogCardModern({ post }) {
   return (
     <div className="bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-700 hover:border-cyan-400 transition-all duration-300">
       <div className="flex gap-5 items-center">
-        {/* Post image/thumbnail */}
         <div className="flex-shrink-0 w-24 h-24">
             <img src={post.image || `https://source.unsplash.com/random/150x150?sig=${post.slug}`} alt={post.title} className="w-full h-full object-cover rounded-md" />
         </div>
-
-        {/* Post content */}
         <div className="flex-1 min-w-0">
           <h3 className="text-lg font-bold text-white mb-1 truncate">
             {post.title}
@@ -158,16 +112,6 @@ function BlogCardModern({ post }) {
     </div>
   );
 }
-
-// --- Social Media Icon Component ---
-function SocialIcon({ href, icon }) {
-    return (
-        <a href={href} className="text-gray-400 hover:text-white transition-colors">
-            <span className="text-2xl">{icon}</span>
-        </a>
-    );
-}
-
 
 // This function runs at build time to fetch all blog posts.
 export async function getStaticProps() {

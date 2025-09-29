@@ -2,3 +2,6 @@
 # allowed to access everything on the site (Disallow:).
 User-agent: *
 Disallow:
+
+# Point search engines to your sitemap
+Sitemap: https://www.rohithegde.in/sitemap.xml

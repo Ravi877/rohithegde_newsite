@@ -1,14 +1,16 @@
-// pages/index.js - Homepage (should be your landing page, not blog listing)
+// pages/index.js - Homepage with Recent Posts
 import Layout from '../components/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
+import { getAllPosts } from '../lib/blog';
 
-export default function Home() {
+export default function Home({ recentPosts }) {
   return (
     <Layout
       title="Rohit Hegde - Finance, Tech & Creativity"
       description="Welcome to my personal website where I share insights on finance, technology, and creativity."
     >
-      {/* Hero Section with gradient background */}
+      {/* Hero Section */}
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -19,12 +21,12 @@ export default function Home() {
 
         {/* Main Content */}
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl">
+          <div className="text-center max-w-5xl">
             {/* Main Heading */}
             <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 animate-fade-in">
               Welcome to My World
             </h1>
-            
+
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-cyan-200 mb-8 max-w-2xl mx-auto">
               Exploring the intersection of finance, technology, and creativity.
@@ -39,7 +41,7 @@ export default function Home() {
               >
                 Read My Blog
               </Link>
-              
+
               <a
                 href="https://info.rohithegde.in"
                 target="_blank"
@@ -50,24 +52,17 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Feature Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-              <FeatureCard
-                icon="💰"
-                title="Finance"
-                description="Investment strategies and financial insights"
-              />
-              <FeatureCard
-                icon="💻"
-                title="Technology"
-                description="Latest in tech and development"
-              />
-              <FeatureCard
-                icon="🎨"
-                title="Creativity"
-                description="Design, art, and innovation"
-              />
+            {/* Recent Posts Section */}
+            <div className="mt-20 text-left">
+                <h2 className="text-3xl font-bold text-white mb-6 text-center">Latest Articles</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {recentPosts.map((post) => (
+                        <PostCard key={post.slug} post={post} />
+                    ))}
+                    <ReadMoreCard />
+                </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -75,13 +70,54 @@ export default function Home() {
   );
 }
 
-// Feature Card Component
-function FeatureCard({ icon, title, description }) {
-  return (
-    <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300">
-      <div className="text-5xl mb-4">{icon}</div>
-      <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-      <p className="text-cyan-200 text-sm">{description}</p>
-    </div>
-  );
+// --- FINAL REVISED Component for Recent Post Tiles ---
+function PostCard({ post }) {
+    return (
+        <Link href={`/blog/${post.slug}`} className="group block relative h-72 rounded-xl overflow-hidden shadow-lg transform hover:-translate-y-1 transition-transform duration-300">
+            {/* Background Image with effects */}
+            <Image
+                src={post.image || '/images/uploads/default-post-image.jpg'}
+                alt={post.title}
+                fill
+                className="object-cover w-full h-full transition-all duration-500 brightness-75 blur-sm group-hover:brightness-100 group-hover:blur-0 group-hover:scale-110"
+            />
+            {/* Consistent semi-transparent overlay */}
+            <div className="absolute inset-0 bg-black/30"></div>
+            
+            {/* Centered Content with Text Shadow */}
+            <div className="relative h-full flex flex-col justify-center items-center p-6 text-center text-white">
+                <h3 className="text-2xl font-bold leading-tight [text-shadow:_0_2px_4px_rgb(0_0_0_/_50%)]">
+                    {post.title}
+                </h3>
+            </div>
+        </Link>
+    );
+}
+
+
+// --- Component for the "Read More" Tile ---
+function ReadMoreCard() {
+    return (
+        <Link href="/blog" className="group flex flex-col items-center justify-center h-72 rounded-xl bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-20 hover:border-cyan-400 hover:bg-opacity-20 transition-all duration-300">
+            <div className="text-center text-white">
+                <h3 className="text-xl font-bold">Read More</h3>
+                <p className="text-slate-300 text-sm mt-1">View All Posts</p>
+                <div className="mt-4 text-4xl transform group-hover:translate-x-2 transition-transform duration-300">
+                →
+                </div>
+            </div>
+        </Link>
+    );
+}
+
+
+// This function runs at build time to fetch the 3 most recent posts.
+export async function getStaticProps() {
+  const allPosts = getAllPosts();
+  const recentPosts = allPosts.slice(0, 3);
+  return {
+    props: {
+      recentPosts,
+    },
+  };
 }
