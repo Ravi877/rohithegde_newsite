@@ -1,41 +1,14 @@
-// pages/index.js - Modern Blog Page with Categories
-import { useState } from 'react';
-import Layout from '../../components/Layout';
-import { getAllPosts } from '../../lib/blog';
-import BlogCard from '../../components/BlogCard';
+// pages/index.js - Homepage (should be your landing page, not blog listing)
+import Layout from '../components/Layout';
+import Link from 'next/link';
 
-export default function BlogIndex({ allPosts }) {
-  // Available blog categories
-  const categories = [
-    { id: 'all', name: 'All Posts', active: true },
-    { id: 'security', name: 'Security' },
-    { id: 'trending', name: 'Trending' },
-    { id: 'policy', name: 'Policy & Legal' },
-    { id: 'speed', name: 'Speed & Reliability' },
-    { id: 'life', name: 'Life at Company' },
-    { id: 'partners', name: 'Partners' }
-  ];
-
-  // Sub-categories for active filtering
-  const subCategories = [
-    { id: 'tech-ai', name: 'Tech AI News', parent: 'trending' },
-    { id: 'trending', name: 'Trending', parent: 'trending' },
-    { id: 'mobiles', name: 'Mobiles', parent: 'trending' },
-    { id: 'cybersecurity', name: 'Cybersecurity', parent: 'security' },
-    { id: 'cloud', name: 'Cloud Computing', parent: 'speed' }
-  ];
-
-  const [activeCategory, setActiveCategory] = useState('all');
-  const [activeSubCategory, setActiveSubCategory] = useState('');
-
-  // Filter posts based on selected category
-  const filteredPosts = activeCategory === 'all'
-    ? allPosts
-    : allPosts.filter(post => post.category === activeCategory);
-
+export default function Home() {
   return (
-    <Layout title="Blog | Rohit Hegde" description="Read the latest articles on finance, technology, and creativity.">
-      {/* Background with gradient similar to the images */}
+    <Layout 
+      title="Rohit Hegde - Finance, Tech & Creativity" 
+      description="Welcome to my personal website where I share insights on finance, technology, and creativity."
+    >
+      {/* Hero Section with gradient background */}
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -44,89 +17,55 @@ export default function BlogIndex({ allPosts }) {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full opacity-10 blur-3xl"></div>
         </div>
 
-        {/* Main content */}
-        <div className="relative z-10 max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        {/* Main Content */}
+        <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl">
+            {/* Main Heading */}
+            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 animate-fade-in">
+              Welcome to My World
+            </h1>
+            
+            {/* Subtitle */}
+            <p className="text-xl md:text-2xl text-cyan-200 mb-8 max-w-2xl mx-auto">
+              Exploring the intersection of finance, technology, and creativity. 
+              Join me on this journey of learning and sharing.
+            </p>
 
-          {/* Header with Blog Categories button */}
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center space-x-4">
-              <div className="bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-lg px-4 py-2 border border-gray-600">
-                <span className="text-white font-medium">Blog Categories</span>
-              </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link 
+                href="/blog"
+                className="px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                Read My Blog
+              </Link>
+              
+              <Link 
+                href="/about"
+                className="px-8 py-4 bg-white bg-opacity-10 hover:bg-opacity-20 text-white font-bold rounded-lg transition-all duration-300 backdrop-blur-sm border border-white border-opacity-30"
+              >
+                About Me
+              </Link>
             </div>
 
-            {/* Top navigation buttons (like in the image) */}
-            <div className="hidden md:flex items-center space-x-4 bg-white bg-opacity-10 backdrop-blur-sm rounded-lg px-6 py-2 border border-white border-opacity-20">
-              <button className="text-white hover:text-cyan-300 transition-colors">Home</button>
-              <button className="text-white hover:text-cyan-300 transition-colors">About</button>
-              <button className="text-white hover:text-cyan-300 transition-colors">Service</button>
-              <button className="text-white hover:text-cyan-300 transition-colors">Features</button>
-              <button className="text-white hover:text-cyan-300 transition-colors">Testimonial</button>
+            {/* Feature Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+              <FeatureCard 
+                icon="💰"
+                title="Finance"
+                description="Investment strategies and financial insights"
+              />
+              <FeatureCard 
+                icon="💻"
+                title="Technology"
+                description="Latest in tech and development"
+              />
+              <FeatureCard 
+                icon="🎨"
+                title="Creativity"
+                description="Design, art, and innovation"
+              />
             </div>
-          </div>
-
-          {/* Main category navigation */}
-          <nav className="mb-8">
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setActiveCategory(category.id)}
-                  className={`px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-300 ${
-                    activeCategory === category.id
-                      ? 'bg-white text-gray-900 shadow-lg transform scale-105'
-                      : 'bg-gray-800 bg-opacity-50 text-white hover:bg-opacity-70 backdrop-blur-sm border border-gray-600'
-                  }`}
-                >
-                  {category.name}
-                </button>
-              ))}
-            </div>
-          </nav>
-
-          {/* Sub-category navigation (when applicable) */}
-          <div className="mb-8 flex flex-wrap gap-3 justify-center lg:justify-start">
-            {subCategories
-              .filter(sub => activeCategory === 'all' || sub.parent === activeCategory)
-              .map((subCategory) => (
-                <button
-                  key={subCategory.id}
-                  onClick={() => setActiveSubCategory(subCategory.id)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    activeSubCategory === subCategory.id
-                      ? 'bg-cyan-500 text-white shadow-lg'
-                      : 'bg-blue-900 bg-opacity-50 text-cyan-200 hover:bg-opacity-70 backdrop-blur-sm border border-blue-500 border-opacity-30'
-                  }`}
-                >
-                  {subCategory.name}
-                </button>
-              ))}
-          </div>
-
-          {/* Blog posts grid - similar to the card layout in the image */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {filteredPosts.map((post, index) => (
-              <BlogCardModern key={post.slug} post={post} index={index} />
-            ))}
-          </div>
-
-          {/* Social media links at bottom (like in the image) */}
-          <div className="flex justify-center space-x-6 mt-12 pt-8 border-t border-white border-opacity-20">
-            <a href="#" className="text-white hover:text-cyan-300 transition-colors">
-              <InstagramIcon />
-            </a>
-            <a href="#" className="text-white hover:text-cyan-300 transition-colors">
-              <FacebookIcon />
-            </a>
-            <a href="#" className="text-white hover:text-cyan-300 transition-colors">
-              <WhatsAppIcon />
-            </a>
-            <a href="#" className="text-white hover:text-cyan-300 transition-colors">
-              <TwitterIcon />
-            </a>
-            <a href="#" className="text-white hover:text-cyan-300 transition-colors">
-              <YouTubeIcon />
-            </a>
           </div>
         </div>
       </div>
@@ -134,10 +73,15 @@ export default function BlogIndex({ allPosts }) {
   );
 }
 
-// Modern Blog Card Component (similar to the cards in your image)
-function BlogCardModern({ post, index }) {
+// Feature Card Component
+function FeatureCard({ icon, title, description }) {
   return (
-    <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 border border-white border-opacity-20">
-      <div className="flex gap-4">
-        {/* Post image/thumbnail */}
-        <div className="flex-shrink-0">
+    <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300">
+      <div className="text-5xl mb-4">{icon}</div>
+      <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+      <p className="text-cyan-200 text-sm">{description}</p>
+    </div>
+  );
+}
+
+// No getStaticProps needed for homepage since it's static content
