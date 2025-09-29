@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <Layout 
-      title="Rohit Hegde - Finance, Tech & Creativity" 
+    <Layout
+      title="Rohit Hegde - Finance, Tech & Creativity"
       description="Welcome to my personal website where I share insights on finance, technology, and creativity."
     >
       {/* Hero Section with gradient background */}
@@ -27,40 +27,42 @@ export default function Home() {
             
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-cyan-200 mb-8 max-w-2xl mx-auto">
-              Exploring the intersection of finance, technology, and creativity. 
+              Exploring the intersection of finance, technology, and creativity.
               Join me on this journey of learning and sharing.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link 
+              <Link
                 href="/blog"
                 className="px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 Read My Blog
               </Link>
               
-              <Link 
-                href="/about"
+              <a
+                href="https://info.rohithegde.in"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 bg-white bg-opacity-10 hover:bg-opacity-20 text-white font-bold rounded-lg transition-all duration-300 backdrop-blur-sm border border-white border-opacity-30"
               >
                 About Me
-              </Link>
+              </a>
             </div>
 
             {/* Feature Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-              <FeatureCard 
+              <FeatureCard
                 icon="💰"
                 title="Finance"
                 description="Investment strategies and financial insights"
               />
-              <FeatureCard 
+              <FeatureCard
                 icon="💻"
                 title="Technology"
                 description="Latest in tech and development"
               />
-              <FeatureCard 
+              <FeatureCard
                 icon="🎨"
                 title="Creativity"
                 description="Design, art, and innovation"
@@ -83,5 +85,3 @@ function FeatureCard({ icon, title, description }) {
     </div>
   );
 }
-
-// No getStaticProps needed for homepage since it's static content
