@@ -1,6 +1,10 @@
 // pages/sitemap.js
 import { getAllPosts } from '../lib/blog';
 
+// This is the crucial line for Cloudflare Pages. It tells Next.js to run this function
+// on the "edge," which is compatible with Cloudflare's environment.
+export const runtime = 'edge';
+
 // Define the base URL of your website.
 const BASE_URL = 'https://www.rohithegde.in';
 
