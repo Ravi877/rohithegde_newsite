@@ -1,0 +1,11 @@
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Set global styles for the entire site */
+@layer base {
+  body {
+    @apply bg-dark-navy text-light-slate; /* Use our custom dark background and light text */
+  }
+}

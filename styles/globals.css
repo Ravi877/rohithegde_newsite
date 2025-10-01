@@ -3,9 +3,19 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Set global styles for the entire site */
 @layer base {
   body {
-    @apply bg-dark-navy text-light-slate; /* Use our custom dark background and light text */
+    @apply bg-dark-navy text-light-slate;
   }
+}
+
+/* For Staggered Animations */
+.stagger-animation {
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* For the glowing card effect on hover */
+.card-glow:hover {
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.4), 0 0 5px rgba(0, 191, 255, 0.3);
 }

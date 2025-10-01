@@ -10,7 +10,7 @@ export default function Layout({ children, title, description }) {
     <div className="min-h-screen flex flex-col">
       <Head>
         <title>{title || 'Modern Blog'}</title>
-        <meta name="description" content={description || 'A modern blog built with Next.js'} />
+        <meta name="description" content={description || 'Its Rohit Hegde built with Next.js'} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
