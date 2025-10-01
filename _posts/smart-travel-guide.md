@@ -1,7 +1,7 @@
 ---
 title: "The Ultimate 2025 Travel Guide: Exploring the World with Smart Planning and AI Insights"
 description: "Travel in 2025 is smarter, safer, and more personalized than ever. Discover tips, destinations, and AI tools that make your adventures unforgettable."
-date: "2025-10-03"
+date: "2025-9-28"
 author: "Rohit Hegde"
 image: "/images/uploads/travel-2025.jpg"
 tags: ["Travel", "Adventure", "Tourism", "AI Travel", "Smart Travel Tips"]

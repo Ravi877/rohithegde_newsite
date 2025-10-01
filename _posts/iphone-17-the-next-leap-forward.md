@@ -1,7 +1,7 @@
 ---
 title: "iPhone 17 Leaks & Rumors: A New Design, Under-Display Face ID, and an AI-Powered 'Ultra' Model?"
 description: "The iPhone 16 is here, but the tech world is already looking ahead. We dive deep into the most exciting iPhone 17 rumors, from a completely uninterrupted display to the potential debut of a new top-tier 'Ultra' model."
-date: "2025-09-29"
+date: "2025-09-09"
 author: "Rohit Hegde"
 image: "/images/uploads/iphone-17-concept.jpg"
 tags: ["iPhone 17", "Apple", "Leaks", "Rumors", "Technology", "Mobiles"]
