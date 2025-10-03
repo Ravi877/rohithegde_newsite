@@ -21,6 +21,10 @@ export default function Header() {
             <Link href="/blog" className="text-light-slate hover:text-white transition-colors font-medium">
               Blog
             </Link>
+            {/* NEW LINK ADDED */}
+            <Link href="/tools" className="text-light-slate hover:text-white transition-colors font-medium">
+              Tools
+            </Link>
           </div>
         </div>
       </nav>
