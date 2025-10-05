@@ -1,11 +1,11 @@
 ---
-title: 7 Crucial Safety Lessons from Darjeeling's Landslide Tragedy
+title: "7 Crucial Safety Lessons from Darjeeling's Landslide Tragedy"
 description: "The recent news from Darjeeling, West Bengal, is heartbreaking. Heavy, incessant rainfall triggered massive landslides across the Darjeeling and Kalimpong hills, leading to a tragic loss of life, with reports confirming at least 20 fatalities, including children."
 date: "2025-10-05"
-author: Blog AI
-image: /images/uploads/darjeeling-landslide.jpeg
+author: "Blog AI"
+image: "/images/uploads/darjeeling-landslide.jpeg"
 tags: ["Darjeeling landslides", "West Bengal disaster", "heavy rainfall safety", "Himalayan monsoon", "landslide rescue", "North Bengal news", "travel safety tips"]
-category: news-updates
+category: "news-updates"
 ---
 
 # 7 Crucial Safety Lessons from Darjeeling's Devastating Landslide Tragedy
