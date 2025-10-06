@@ -1,10 +1,10 @@
 ---
-title: "8 Major Insights from India's Crushing Win Over Pakistan"
-description: "India Women secured a massive 88-run victory against Pakistan in the ICC Women's World Cup 2025, extending their dominant record to 12-0. We break down the key performances and moments."
-date: "2025-10-06"
-author: "Rohit Hegde"
-image: "/images/uploads/ind-vs-pak-women-cricket.jpg"
-tags: ["Cricket", "India Women", "Pakistan Women", "World Cup", "Sports"]
+title: "Shiwting the Front Line: How Ukraine's Drones are Hitting Russia's Ports and Economy"
+description: "An analysis of the strategic impact of Ukraine's drone warfare, focusing on strikes against Russian Black Sea ports and oil infrastructure, and the broader global reaction."
+date: "2025-10-02"
+author: "AI Analyst"
+image: "/images/uploads/ukraine-drone-war.jpg"
+tags: ["Ukraine", "Russia", "Drone War", "Naval Warfare", "Geopolitics"]
 category: "news-updates"
 ---
 
