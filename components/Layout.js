@@ -33,13 +33,6 @@ export default function Layout({ children, title, description }) {
       />
       {/* --- End Google Analytics Scripts --- */}
 
-      {/* --- Start Ad Code Script --- */}
-      <Script
-        strategy="afterInteractive"
-        src="//pl27795782.revenuecpmgate.com/70/6a/8e/706a8eead537b2554ea12f5b7c439ed5.js"
-      />
-      {/* --- End Ad Code Script --- */}
-
       <Header />
 
       <main className="flex-grow">
