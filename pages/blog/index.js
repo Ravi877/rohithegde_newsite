@@ -11,10 +11,11 @@ export default function BlogIndex({ allPosts }) {
     { id: 'all', name: 'All Posts' },
     { id: 'trending', name: 'Trending' },
     { id: 'health', name: 'Health' },
+    { id: 'travel', name: 'Travel' },
     { id: 'personal-finance', name: 'Personal Finance' },
     { id: 'tech-ai', name: 'Tech & AI' },
     { id: 'news-updates', name: 'News & updates' },
-    { id: 'travel', name: 'Travel' }
+    
   ];
 
   const [activeCategory, setActiveCategory] = useState('all');
@@ -41,13 +42,7 @@ export default function BlogIndex({ allPosts }) {
             <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm rounded-lg px-4 py-2 border border-gray-700">
               <span className="text-white font-medium">Blog Categories</span>
             </div>
-            <div className="hidden md:flex items-center space-x-6 text-sm">
-              <Link href="#" className="hover:text-cyan-400 transition-colors">Home</Link>
-              <Link href="#" className="hover:text-cyan-400 transition-colors">About</Link>
-              <Link href="#" className="hover:text-cyan-400 transition-colors">Service</Link>
-              <Link href="#" className="hover:text-cyan-400 transition-colors">Features</Link>
-              <Link href="#" className="hover:text-cyan-400 transition-colors">Testimonial</Link>
-            </div>
+    
           </div>
 
           {/* Main category navigation */}

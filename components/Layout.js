@@ -1,17 +1,21 @@
 // components/Layout.js
 import Head from 'next/head';
-import Script from 'next/script'; // Import the Script component
+import Script from 'next/script';
 import Header from './Header';
 import Footer from './Footer';
 
 // This is the main layout component that wraps every page.
-export default function Layout({ children, title, description }) {
+export default function Layout({ children, title, description, canonicalUrl }) {
   return (
     <div className="min-h-screen flex flex-col">
       <Head>
         <title>{title || 'Rohit Hegde - Digital Mind'}</title>
         <meta name="description" content={description || 'Exploring the intersection of finance, technology, and creativity.'} />
         <link rel="icon" href="/favicon.ico" />
+        
+        {/* New: Canonical URL tag */}
+        {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+
       </Head>
 
       {/* --- Add Google Analytics Scripts Here --- */}

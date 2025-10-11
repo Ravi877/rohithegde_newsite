@@ -87,6 +87,12 @@ AI is changing travel from guesswork to precision. Today, apps can:
 By leveraging these tools, you can **maximize every moment of your trip**, ensuring that your travel is both fun and efficient.
 
 ---
+***
+
+#### Planning Your Next Journey
+
+* **Future of Asia Travel:** Learn about the massive new connection being built in [India and Bhutan Announce Historic Rail Link](https://www.rohithegde.in/blog/india-bhutan-rail-link).
+* **Mountain Safety First:** Essential reading before a monsoon trip: review the [7 Crucial Safety Lessons from Darjeeling's Landslide Tragedy](https://www.rohithegde.in/blog/7-crucial-safety-lessons-from-darjeelings-landslide-tragedy).
 
 ## Final Thoughts
 

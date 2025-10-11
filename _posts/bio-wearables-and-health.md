@@ -99,3 +99,9 @@ Bio-wearables are transforming health from reactive to **proactive, personalized
 
 By combining technology with an understanding of your own physiology, you can take control of your health, prevent future problems, and optimize your performance, sleep, nutrition, and mental well-being. The future of wellness is here—and it’s wearable.
 
+***
+
+#### Wellness & Performance Insights
+
+* **The Future of Intelligence:** Understand the tech breakthroughs driving health innovation in [The September AI Revolution](https://www.rohithegde.in/blog/the-september-ai-revolution).
+* **High-Stakes Performance:** See elite performance in action with our preview of the Big Ten matchup: [Ohio State vs Illinois Preview](https://www.rohithegde.in/blog/ohio-state-vs-illinois).

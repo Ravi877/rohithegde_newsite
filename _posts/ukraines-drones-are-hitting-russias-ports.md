@@ -51,3 +51,10 @@ This conflict is a reminder that the war is constantly evolving, driven by ingen
 For more detail on how these drone strikes are impacting Russia's oil revenues and logistics, you can watch this analysis: [Ukraine Drones Cut Russia's Oil Money, Ports Stall](https://www.youtube.com/watch?v=example-link).
 
 (Ai is used for formatting and all the informations are sourced from various sources and combined to give a clear information to readers)
+
+***
+
+#### More Global Updates
+
+* **Geopolitical Conflict:** Dive into how drone warfare is reshaping the Black Sea in [Ukraine's Drones are Hitting Russia's Ports](https://www.rohithegde.in/blog/ukraines-drones-are-hitting-russias-ports).
+* **International Sports Drama:** Don't miss the biggest upset in African cricket in [Namibia Stuns South Africa](https://www.rohithegde.in/blog/namibia-stuns-south-africa).

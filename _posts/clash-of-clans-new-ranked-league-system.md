@@ -69,3 +69,11 @@ The challenge for Supercell now is to fine-tune the reward and shield systems to
 What do you think of the new system? Are you focused on farming in Battles, or climbing the competitive ranks?
 
 This video provides an excellent breakdown of the whole concept: [New Ranked Mode in Clash of Clans!](https://www.youtube.com/watch?v=QHnbUfaq1XQ).
+
+***
+
+#### Dive Deeper: Tech & Code Tools
+
+* **Data Organization:** Need to validate or clean up your API data? Use our quick **JSON Formatter & Validator** tool.
+* **Boost Security:** Generate a complex and unique password right now with our **Strong Password Generator**.
+* [Explore all our developer, design, and tech utilities in the Digital Toolkit](https://www.rohithegde.in/tools/).
