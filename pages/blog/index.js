@@ -15,7 +15,6 @@ export default function BlogIndex({ allPosts }) {
     { id: 'personal-finance', name: 'Personal Finance' },
     { id: 'tech-ai', name: 'Tech & AI' },
     { id: 'news-updates', name: 'News & updates' },
-    
   ];
 
   const [activeCategory, setActiveCategory] = useState('all');
