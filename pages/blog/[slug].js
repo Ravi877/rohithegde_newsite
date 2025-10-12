@@ -5,27 +5,56 @@ import { markdownToHtml } from '../../lib/markdown';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// This page displays a single blog post.
 export default function BlogPost({ post, htmlContent, canonicalUrl }) {
-  // ... (component code remains the same)
+  return (
+    <Layout>
+      <article className="prose mx-auto">
+        <h1>{post.title}</h1>
+        <p className="text-sm text-gray-500">{post.formattedDate}</p>
+
+        {post.coverImage && (
+          <Image
+            src={post.coverImage}
+            alt={post.title}
+            width={800}
+            height={400}
+            className="rounded-xl my-6"
+          />
+        )}
+
+        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+
+        <div className="mt-8">
+          <Link href="/blog" className="text-blue-500 hover:underline">
+            ← Back to Blog
+          </Link>
+        </div>
+      </article>
+    </Layout>
+  );
 }
 
-// ... (getStaticPaths remains the same)
+// ✅ This is the missing part — it tells Next.js which blog pages to build.
+export async function getStaticPaths() {
+  const paths = getAllPostSlugs(); // returns [{ params: { slug: 'post-name' }}, ...]
+  return {
+    paths,
+    fallback: false, // only build these paths; no runtime fetching
+  };
+}
 
-// Fetches the data for a specific post based on the slug.
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug);
   const htmlContent = markdownToHtml(post.content);
-  
-  // FIX: Updated BASE_URL to remove 'www.' for bare domain
-  const BASE_URL = 'https://rohithegde.in'; 
+
+  const BASE_URL = 'https://rohithegde.in';
   const canonicalUrl = `${BASE_URL}/blog/${params.slug}/`;
 
   return {
     props: {
       post,
       htmlContent,
-      canonicalUrl, // Pass the constructed URL to the component
+      canonicalUrl,
     },
   };
 }
