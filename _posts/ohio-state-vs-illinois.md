@@ -46,5 +46,5 @@ The expert consensus on all **ohio state vs illinois predictions** is a comforta
 
 #### Keep Reading: More Competition & Strategy
 
-* **The Biggest Upset in Cricket:** Read about the shocking defeat of the Proteas in the **south africa vs namibia** T20I: [Namibia Stuns South Africa](https://www.rohithegde.in/blog/namibia-stuns-south-africa).
+* **The Biggest Upset in Cricket:** Read about the shocking defeat of the Proteas in the **south africa vs namibia** T20I: [Namibia Stuns South Africa](https://www.rohithegde.in/blog/Namibia-Stuns-South-Africa).
 * **Strategy in Gaming:** See how another highly competitive system was reworked in [Clash of Clans: New Ranked League System](https://www.rohithegde.in/blog/clash-of-clans-new-ranked-league-system).
