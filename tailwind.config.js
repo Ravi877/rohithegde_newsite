@@ -39,6 +39,10 @@ module.exports = {
           '100%': { transform: 'translateY(0px)' },
         },
       },
+      // 👇 NEW ADDITION: Background Image for Wonderla
+      backgroundImage: {
+        'wonderla': "url('/images/uploads/wonderla-bg.jpg')",
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
